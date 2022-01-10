@@ -1,6 +1,6 @@
 {
   "name": "Enervent EDA Modbus Bridge",
-  "version": "1.0.0",
+  "version": "latest",
   "slug": "hassos_eda_modbus_bridge",
   "description": "An HTTP/MQTT bridge for Enervent ventilation units with EDA automation",
   "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
@@ -25,5 +25,6 @@
   },
   "ports_description": {
     "8080/tcp": "The HTTP listening port"
-  }
+  },
+  "image": "jalle19/hassos-eda-modbus-bridge"
 }
