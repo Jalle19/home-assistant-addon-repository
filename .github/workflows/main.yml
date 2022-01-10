@@ -1,0 +1,18 @@
+name: "Build eda-modbus-bridge"
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    name: Build eda-modbus-bridge
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v2
+      - name: Build eda-modbus-bridge
+        uses: home-assistant/builder@master
+        with:
+          args: |
+            --test \
+            --all \
+            --target eda-modbus-bridge
