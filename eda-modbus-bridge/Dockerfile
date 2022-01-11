@@ -7,13 +7,13 @@ WORKDIR /app
 
 RUN apk add --no-cache git nodejs npm python3 musl-dev make g++ linux-headers
 
-RUN git clone --depth=1 https://github.com/Jalle19/eda-modbus-bridge.git .
+RUN git clone --depth=1 https://github.com/Jalle19/eda-modbus-bridge.git eda-modbus-bridge
+RUN npm i --prefix eda-modbus-bridge
 
-RUN npm i
+COPY config.sh /app/config.sh
+RUN chmod +x /app/config.sh
 
-COPY config.json /app/config.json
 COPY entrypoint.sh /app/entrypoint.sh
-
 RUN chmod +x /app/entrypoint.sh
 
 CMD ["/app/entrypoint.sh"]
