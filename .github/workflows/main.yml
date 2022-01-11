@@ -3,8 +3,8 @@ name: "Build eda-modbus-bridge"
 on: [ push, pull_request ]
 
 jobs:
-  login:
-    name: Login to Docker Hub
+  build:
+    name: Build eda-modbus-bridge
     runs-on: ubuntu-latest
     steps:
       - name: Login to Docker Hub
@@ -12,10 +12,6 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
-  build:
-    name: Build eda-modbus-bridge
-    runs-on: ubuntu-latest
-    steps:
       - name: Checkout the repository
         uses: actions/checkout@v2
       - name: Build eda-modbus-bridge
@@ -24,3 +20,4 @@ jobs:
           args: |
             --all \
             --target eda-modbus-bridge
+            --docker_hub ${{ secrets.DOCKER_HUB_USERNAME }}
