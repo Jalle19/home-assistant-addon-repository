@@ -44,5 +44,11 @@
       "publish_interval": "int?"
     }
   },
+  "ports": {
+    "8080/tcp": 9090
+  },
+  "ports_description": {
+    "8080/tcp": "The HTTP listening port"
+  },
   "#image": "jalle19/hassos-{arch}-eda-modbus-bridge"
 }
