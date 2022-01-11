@@ -22,6 +22,5 @@ jobs:
         uses: home-assistant/builder@master
         with:
           args: |
-            --test \
             --all \
             --target eda-modbus-bridge
