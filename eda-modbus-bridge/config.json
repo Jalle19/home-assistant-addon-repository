@@ -12,6 +12,9 @@
   ],
   "url": "https://github.com/Jalle19/eda-modbus-bridge",
   "startup": "services",
+  "discovery": [
+    "mqtt"
+  ],
   "boot": "auto",
   "privileged": [
     "SYS_MODULE",
@@ -29,6 +32,10 @@
       "username": "",
       "password": "",
       "publish_interval": 10
+    },
+    "http": {
+      "enabled": false,
+      "listen_address": "0.0.0.0"
     }
   },
   "schema": {
@@ -42,6 +49,10 @@
       "username": "str?",
       "password": "str?",
       "publish_interval": "int?"
+    },
+    "http": {
+      "enabled": "bool?",
+      "listen_address": "str?"
     }
   },
   "ports": {
