@@ -20,4 +20,3 @@ jobs:
           args: |
             --all \
             --target eda-modbus-bridge
-            --docker_hub ${{ secrets.DOCKER_HUB_USERNAME }}
