@@ -39,6 +39,8 @@ function get-config {
   bashio::log.info "Modbus slave: ${modbusSlave}"
   CMD_OPTIONS+=" --modbusSlave ${modbusSlave}"
 
+  bashio::log.info $(bashio::config.true 'http.enabled')
+  
   if [[ $(bashio::config.true 'http.enabled') = "${__BASHIO_EXIT_OK}" ]]; then
     bashio::log.info "HTTP listening on: ${httpListenAddress}"
     CMD_OPTIONS+="  --http true --httpListenAddress $httpListenAddress"
