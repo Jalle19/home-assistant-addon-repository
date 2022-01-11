@@ -35,7 +35,8 @@
     },
     "http": {
       "enabled": false,
-      "listen_address": "0.0.0.0"
+      "listen_address": "0.0.0.0",
+      "listen_port": 9090
     }
   },
   "schema": {
@@ -52,7 +53,8 @@
     },
     "http": {
       "enabled": "bool?",
-      "listen_address": "str?"
+      "listen_address": "str?",
+      "listen_port": "int?"
     }
   },
   "ports": {

@@ -31,6 +31,7 @@ function get-config {
   mqttPublishInterval=$(bashio::config 'mqtt.publish_interval')
 
   httpListenAddress=$(bashio::config 'http.listen_address' | escape-input)
+  httpListenPort=$(bashio::config 'http.listen_port')
 
   bashio::log.info "---------------------------------------------------"
   bashio::log.info "Modbus device: ${modbusDevice}"
@@ -39,11 +40,9 @@ function get-config {
   bashio::log.info "Modbus slave: ${modbusSlave}"
   CMD_OPTIONS+=" --modbusSlave ${modbusSlave}"
 
-  bashio::log.info $(bashio::config.true 'http.enabled')
-  
-  if [[ $(bashio::config.true 'http.enabled') = "${__BASHIO_EXIT_OK}" ]]; then
-    bashio::log.info "HTTP listening on: ${httpListenAddress}"
-    CMD_OPTIONS+="  --http true --httpListenAddress $httpListenAddress"
+  if [[ $(bashio::config 'http.enabled') = "true" ]]; then
+    bashio::log.info "HTTP listening on: ${httpListenAddress}:${httpListenPort}"
+    CMD_OPTIONS+=" --http true --httpListenAddress $httpListenAddress --httpPort $httpListenPort"
   fi
 
   if [[ -n "$mqttServer" ]]; then
