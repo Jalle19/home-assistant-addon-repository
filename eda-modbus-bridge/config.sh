@@ -15,7 +15,7 @@ function get-config {
 
   local mqttServer
   local mqttPort
-  local mqttUser
+  local mqttUsername
   local mqttPassword
   local mqttPublishInterval
 
@@ -28,7 +28,7 @@ function get-config {
 
   mqttServer=$(bashio::config 'mqtt.server' | escape-input)
   mqttPort=$(bashio::config 'mqtt.port')
-  mqttUser=$(bashio::config 'mqtt.username' | escape-input)
+  mqttUsername=$(bashio::config 'mqtt.username' | escape-input)
   mqttPassword=$(bashio::config 'mqtt.password' | escape-input)
   mqttPublishInterval=$(bashio::config 'mqtt.publish_interval')
 
@@ -54,8 +54,8 @@ function get-config {
     CMD_OPTIONS+=" --mqttBrokerUrl mqtt://${mqttServer}:${mqttPort}"
     bashio::log.info "MQTT broker: ${mqttServer}:${mqttPort}"
 
-    if [[ -n "$mqttUser" && -n "$mqttPassword" ]]; then
-      CMD_OPTIONS+=" --mqttUser $mqttUser --mqttPassword $mqttPassword"
+    if [[ -n "$mqttUsername" && -n "$mqttPassword" ]]; then
+      CMD_OPTIONS+=" --mqttUsername $mqttUsername --mqttPassword $mqttPassword"
       bashio::log.info "MQTT: using credentials"
     else
       bashio::log.info "MQTT: anonymous login"
