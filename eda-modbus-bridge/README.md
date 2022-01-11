@@ -1,20 +1,20 @@
-# eda-modbus-bridge
+# Home Assistant add-on: eda-modbus-bridge
 
-> I take no responsibility if you break your ventilation unit by using this software!
+![Supports aarch64 Architecture][aarch64-shield]
+![Supports amd64 Architecture][amd64-shield]
+![Supports armhf Architecture][armhf-shield]
+![Supports armv7 Architecture][armv7-shield]
+![Supports i386 Architecture][i386-shield]
 
-A Modbus MQTT bridge for Enervent ventilation units with EDA automation (e.g. Pingvin). 
+A Home Assistant add-on for the [eda-modbus-bridge](https://github.com/Jalle19/eda-modbus-bridge) application (a 
+Modbus MQTT bridge for Enervent ventilation units with EDA automation)
 
-Communication happens over RS-485 (Modbus RTU) by connecting a serial device to the "Freeway" port on the ventilation 
-unit's computer board.
+For add-on installation instructions, see [DOCS.md](./DOCS.md).
 
-## Features
+For more information about the software itself, see the [eda-modbus-bridge README](https://github.com/Jalle19/eda-modbus-bridge/blob/master/README.md).
 
-## Requirements
-
-* An Enervent Pingvin ventilation unit (other EDA-based units may work, but the Modbus register numbers probably differ)
-* An RS-485 device (e.g. `/dev/ttyUSB0`) connected to the Enervent unit's Freeway port
-* MQTT broker
-
-## License
-
-GNU GENERAL PUBLIC LICENSE 3.0
+[aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
+[amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg
+[armhf-shield]: https://img.shields.io/badge/armhf-yes-green.svg
+[armv7-shield]: https://img.shields.io/badge/armv7-yes-green.svg
+[i386-shield]: https://img.shields.io/badge/i386-yes-green.svg
