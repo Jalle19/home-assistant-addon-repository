@@ -1,7 +1,7 @@
 {
   "name": "Enervent EDA Modbus Bridge",
   "version": "1.0.0",
-  "slug": "hassos_eda_modbus_bridge",
+  "slug": "eda-modbus-bridge",
   "description": "A Modbus MQTT bridge for Enervent ventilation units with EDA automation",
   "arch": [
     "armhf",
