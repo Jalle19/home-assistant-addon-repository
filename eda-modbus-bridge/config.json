@@ -63,5 +63,5 @@
   "ports_description": {
     "8080/tcp": "The HTTP listening port"
   },
-  "image": "jalle19/hassos-{arch}-eda-modbus-bridge"
+  "#image": "jalle19/hassos-{arch}-eda-modbus-bridge"
 }
