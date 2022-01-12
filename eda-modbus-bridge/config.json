@@ -1,6 +1,6 @@
 {
   "name": "Enervent EDA Modbus Bridge",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "slug": "eda-modbus-bridge",
   "description": "A Modbus MQTT bridge for Enervent ventilation units with EDA automation",
   "arch": [
@@ -11,9 +11,12 @@
     "i386"
   ],
   "url": "https://github.com/Jalle19/eda-modbus-bridge",
-  "startup": "services",
+  "startup": "application",
   "discovery": [
     "mqtt"
+  ],
+  "services": [
+    "mqtt:need"
   ],
   "boot": "auto",
   "privileged": [
