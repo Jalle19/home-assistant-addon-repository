@@ -1,6 +1,6 @@
 {
   "name": "Enervent EDA Modbus Bridge",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "slug": "eda-modbus-bridge",
   "description": "A Modbus MQTT bridge for Enervent ventilation units with EDA automation",
   "arch": [
@@ -16,7 +16,7 @@
     "mqtt"
   ],
   "services": [
-    "mqtt:need"
+    "mqtt:want"
   ],
   "boot": "auto",
   "privileged": [
@@ -30,7 +30,8 @@
       "slave": 1
     },
     "mqtt": {
-      "server": "",
+      "host": "",
+      "ssl": false,
       "port": 1883,
       "username": "",
       "password": "",
@@ -48,7 +49,8 @@
       "slave": "int?"
     },
     "mqtt": {
-      "server": "str?",
+      "host": "str?",
+      "ssl": "bool?",
       "port": "int?",
       "username": "str?",
       "password": "str?",

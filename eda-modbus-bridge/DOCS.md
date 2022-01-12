@@ -1,6 +1,6 @@
 # Home Assistant add-on: eda-modbus-bridge
 
-This document only describes how to configure the add-on itself - for more information about the application, please 
+This document only describes how to configure the add-on itself - for more information about the application, please
 see the [eda-modbus-bridge README](https://github.com/Jalle19/eda-modbus-bridge/blob/master/README.md).
 
 ## Configuration
@@ -13,14 +13,15 @@ modbus:
   device: /dev/ttyUSB0
   slave: 1
 mqtt:
-  # The address and port to your MQTT broker. Omit to not use MQTT support (limited functionality)
-  server: '''
+  # If MQTT service is available the addon specific MQTT configuration will be ignored, except publish_interval
+  host: ''
+  ssl: false
   port: 1883
   username: ''
   password: ''
   publish_interval: 10
 http:
-  # The HTTP API is disabled by default. If enabled, you'll probably want to expose the port outside the container 
+  # The HTTP API is disabled by default. If enabled, you'll probably want to expose the port outside the container
   # in the "Network" section
   enabled: false
   listen_address: 0.0.0.0
@@ -40,18 +41,10 @@ Nominal add-on startup output looks like this:
 [cont-init.d] done.
 [services.d] starting services
 [services.d] done.
-[21:15:06] INFO: Init config
-[21:15:07] INFO: ---------------------------------------------------
-[21:15:07] INFO: Modbus device: /dev/serial/by-id/usb-FTDI_FT232R_USB_UART_AG0KBDA8-if00-port0
-[21:15:07] INFO: Modbus slave: 1
-[21:15:07] INFO: HTTP listening on: 0.0.0.0:8080
-[21:15:07] INFO: MQTT broker: 10.110.1.3:1883
-[21:15:07] INFO: MQTT: anonymous login
-[21:15:07] INFO: MQTT publish interval: 10
-[21:15:07] INFO: ---------------------------------------------------
-Opening serial connection to /dev/serial/by-id/usb-FTDI_FT232R_USB_UART_AG0KBDA8-if00-port0, slave ID 1
-Connecting to MQTT broker at mqtt://10.110.1.3:1883
-Listening on http://0.0.0.0:8080
+[12:43:27] INFO: MQTT service found, using service config
+Opening serial connection to /dev/ttyUSB0, slave ID 1
+Connecting to MQTT broker at mqtt://core-mosquitto:1883
+Using MQTT broker authentication
 MQTT scheduler started, will publish readings every 10 seconds
 Subscribing to topic(s) eda/mode/+/set
 Subscribing to topic(s) eda/settings/+/set
