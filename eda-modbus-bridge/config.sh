@@ -8,66 +8,57 @@ declare CMD_OPTIONS=""
 # Read and print config.
 # ------------------------------------------------------------------------------
 function get-config {
-  bashio::log.info "Init config"
-
-  local modbusDevice
-  local modbusSlave
-
   local mqttServer
+  local mqttProtocol
+  local mqttSSL
   local mqttPort
   local mqttUsername
   local mqttPassword
-  local mqttPublishInterval
 
   local httpEnabled
-  local httpListenAddress
-  local httpListenPort
-
-  modbusDevice=$(bashio::config 'modbus.device' | escape-input)
-  modbusSlave=$(bashio::config 'modbus.slave')
-
-  mqttServer=$(bashio::config 'mqtt.server' | escape-input)
-  mqttPort=$(bashio::config 'mqtt.port')
-  mqttUsername=$(bashio::config 'mqtt.username' | escape-input)
-  mqttPassword=$(bashio::config 'mqtt.password' | escape-input)
-  mqttPublishInterval=$(bashio::config 'mqtt.publish_interval')
 
   httpEnabled=$(bashio::config 'http.enabled')
-  httpListenAddress=$(bashio::config 'http.listen_address' | escape-input)
-  httpListenPort=$(bashio::config 'http.listen_port')
 
-  bashio::log.info "---------------------------------------------------"
-  bashio::log.info "Modbus device: ${modbusDevice}"
-  CMD_OPTIONS+=" --device ${modbusDevice}"
-
-  bashio::log.info "Modbus slave: ${modbusSlave}"
-  CMD_OPTIONS+=" --modbusSlave ${modbusSlave}"
+  CMD_OPTIONS+=" --device $(bashio::config 'modbus.device' | escape-input)"
+  CMD_OPTIONS+=" --modbusSlave $(bashio::config 'modbus.slave')"
 
   CMD_OPTIONS+=" --http ${httpEnabled}"
 
   if [[ "$httpEnabled" = "true" ]]; then
-    bashio::log.info "HTTP listening on: ${httpListenAddress}:${httpListenPort}"
-    CMD_OPTIONS+=" --httpListenAddress $httpListenAddress --httpPort $httpListenPort"
+    CMD_OPTIONS+=" --httpListenAddress $(bashio::config 'http.listen_address' | escape-input) --httpPort $(bashio::config 'http.listen_port')"
+  fi
+
+  if ! bashio::services.available "mqtt"; then
+    bashio::log.info "No internal MQTT service found, using addon config"
+    mqttServer=$(bashio::config "mqtt.host")
+    mqttPort=$(bashio::config mqtt "mqtt.port")
+    mqttSSL=$(bashio::config "mqtt.ssl")
+    mqttUsername=$(bashio::config "mqtt.username")
+    mqttPassword=$(bashio::config "mqtt.password")
+  else
+    bashio::log.info "MQTT service found, using service config"
+    mqttServer=$(bashio::services mqtt "host")
+    mqttPort=$(bashio::services mqtt "port")
+    mqttSSL=$(bashio::services mqtt "ssl")
+    mqttUsername=$(bashio::services mqtt "username")
+    mqttPassword=$(bashio::services mqtt "password")
   fi
 
   if [[ -n "$mqttServer" ]]; then
-    CMD_OPTIONS+=" --mqttBrokerUrl mqtt://${mqttServer}:${mqttPort}"
-    bashio::log.info "MQTT broker: ${mqttServer}:${mqttPort}"
+    mqttProtocol="mqtt"
+
+    if [[ "$mqttSSL" = "true" ]]; then
+      mqttProtocol="mqtts"
+    fi
+
+    CMD_OPTIONS+=" --mqttBrokerUrl ${mqttProtocol}://${mqttServer}:${mqttPort}"
 
     if [[ -n "$mqttUsername" && -n "$mqttPassword" ]]; then
       CMD_OPTIONS+=" --mqttUsername $mqttUsername --mqttPassword $mqttPassword"
-      bashio::log.info "MQTT: using credentials"
-    else
-      bashio::log.info "MQTT: anonymous login"
     fi
 
-    CMD_OPTIONS+=" --mqttPublishInterval ${mqttPublishInterval}"
-    bashio::log.info "MQTT publish interval: ${mqttPublishInterval}"
-  else
-    bashio::log.info "MQTT: disabled"
+    CMD_OPTIONS+=" --mqttPublishInterval $(bashio::config 'mqtt.publish_interval')"
   fi
-
-  bashio::log.info "---------------------------------------------------"
 
   return 0
 }
