@@ -6,6 +6,9 @@ application itself.
 
 The version number here doesn't necessarily reflect `eda-modbus-bridge`'s version numbering.
 
+## 1.0.3
+- Update to [eda-modbus-bridge 2.0.1](https://github.com/Jalle19/eda-modbus-bridge/releases/tag/2.0.1)
+
 ## 1.0.2
 
 - Simplify configuration, use internal MQTT service if available, otherwise use addon config
