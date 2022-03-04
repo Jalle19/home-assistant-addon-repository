@@ -97,3 +97,34 @@ Publishing Home Assistant auto-discovery configuration for binary_sensor "InletF
 Publishing Home Assistant auto-discovery configuration for binary_sensor "OutletFanPressureAbnomaly"...
 Finished configuration Home Assistant MQTT discovery
 ```
+
+## Alarms
+
+The MQTT auto-discovery feature creates a binary sensor for each alarm the device supports. There are quite a few of 
+these, and in many cases it's enough to know that _any_ alarm is on (the exact alarm can then be checked manually). To 
+group together all alarms into a single "master alarm" entity you can use the following snippet (add to `groups.yaml`):
+
+```yaml
+eda_master_alarm:
+    name: Master alarm
+    icon: 'mdi:alarm-bell'
+    entities:
+      - binary_sensor.eda_returnwatercold
+      - binary_sensor.eda_emergencystop
+      - binary_sensor.eda_firerisk
+      - binary_sensor.eda_servicereminder
+      - binary_sensor.eda_te5supplyairafterhrcold
+      - binary_sensor.eda_te10supplyairafterheatercold
+      - binary_sensor.eda_te10supplyairafterheaterhot
+      - binary_sensor.eda_te20roomtemphot
+      - binary_sensor.eda_te30extractaircold
+      - binary_sensor.eda_te30extractairhot
+      - binary_sensor.eda_hperror
+      - binary_sensor.eda_eherror
+      - binary_sensor.eda_coolingerror
+      - binary_sensor.eda_ehpda
+      - binary_sensor.eda_supplyfilterdirty
+      - binary_sensor.eda_extractfilterdirty
+      - binary_sensor.eda_supplyfanpressureerror
+      - binary_sensor.eda_extractfanpressureerror
+```
