@@ -8,6 +8,7 @@
   * Configure entity icons for alarm sensors
   * Move Home Assistant related logic to `homeassistant.mjs`
   * Publish device information over MQTT once only (https://github.com/Jalle19/eda-modbus-bridge/issues/43)
+- Change default publish interval to 60s, see [DOCS.md](https://github.com/Jalle19/home-assistant-addon-repository/blob/main/eda-modbus-bridge/DOCS.md) for more info (https://github.com/Jalle19/home-assistant-addon-repository/issues/14)
 
 ## 1.1.0
 

@@ -19,7 +19,9 @@ mqtt:
   port: 1883
   username: ''
   password: ''
-  publish_interval: 10
+  # Publish interval in seconds. Any value should work here but on some devices to low interval might lock up the
+  # ModBus interface requiring a reboot of the EDA unit to make the interface responsive again.
+  publish_interval: 60
 http:
   # The HTTP API is disabled by default. If enabled, you'll probably want to expose the port outside the container
   # in the "Network" section

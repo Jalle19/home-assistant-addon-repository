@@ -35,7 +35,7 @@
       "port": 1883,
       "username": "",
       "password": "",
-      "publish_interval": 10
+      "publish_interval": 60
     },
     "http": {
       "enabled": false,
