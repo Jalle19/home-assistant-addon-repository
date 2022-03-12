@@ -1,5 +1,14 @@
 # Change log
 
+## 1.2.0
+- Update to [eda-modbus-bridge 2.2.0](https://github.com/Jalle19/eda-modbus-bridge/releases/tag/2.2.0)
+  * Log attempts to reconnect to the MQTT broker (https://github.com/Jalle19/eda-modbus-bridge/issues/36)
+  * Add documentation on how to physically connect to the unit
+  * Expose the device state (https://github.com/Jalle19/eda-modbus-bridge/issues/46)
+  * Configure entity icons for alarm sensors
+  * Move Home Assistant related logic to `homeassistant.mjs`
+  * Publish device information over MQTT once only (https://github.com/Jalle19/eda-modbus-bridge/issues/43)
+
 ## 1.1.0
 
 - Update to [eda-modbus-bridge 2.1.0](https://github.com/Jalle19/eda-modbus-bridge/releases/tag/2.1.0)
