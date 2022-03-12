@@ -19,7 +19,7 @@ mqtt:
   port: 1883
   username: ''
   password: ''
-  # Publish interval in seconds. Any value should work here but on some devices to low interval might lock up the
+  # Publish interval in seconds. Any value should work here but on some devices too low interval might lock up the
   # ModBus interface requiring a reboot of the EDA unit to make the interface responsive again.
   publish_interval: 60
 http:
