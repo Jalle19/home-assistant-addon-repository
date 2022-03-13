@@ -1,6 +1,6 @@
 {
   "name": "Enervent EDA Modbus Bridge",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "slug": "eda-modbus-bridge",
   "description": "A Modbus MQTT bridge for Enervent ventilation units with EDA automation",
   "arch": [
@@ -35,7 +35,7 @@
       "port": 1883,
       "username": "",
       "password": "",
-      "publish_interval": 10
+      "publish_interval": 60
     },
     "http": {
       "enabled": false,
