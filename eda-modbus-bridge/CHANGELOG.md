@@ -1,5 +1,10 @@
 # Change log
 
+## 1.3.0
+- Update to [eda-modbus-bridge 2.3.0](https://github.com/Jalle19/eda-modbus-bridge/releases/tag/2.3.0)
+  * Add initial support for MD automation units (https://github.com/Jalle19/eda-modbus-bridge/issues/58), mainly "eco mode"
+  * Add a "known issues" section to the README
+
 ## 1.2.1
 - Change default publish interval to 60s, see [DOCS.md](https://github.com/Jalle19/home-assistant-addon-repository/blob/main/eda-modbus-bridge/DOCS.md) for more info (https://github.com/Jalle19/home-assistant-addon-repository/issues/14)
 
