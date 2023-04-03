@@ -1,5 +1,8 @@
 # Change log
 
+## future release
+- Fix "s6-overlay-suexec: fatal: can only run as pid 1" error on addon start
+
 ## 1.3.0
 - Update to [eda-modbus-bridge 2.3.0](https://github.com/Jalle19/eda-modbus-bridge/releases/tag/2.3.0)
   * Add initial support for MD automation units (https://github.com/Jalle19/eda-modbus-bridge/issues/58), mainly "eco mode"

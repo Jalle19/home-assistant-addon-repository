@@ -10,6 +10,7 @@
     "amd64",
     "i386"
   ],
+  "init": false,
   "url": "https://github.com/Jalle19/eda-modbus-bridge",
   "startup": "application",
   "discovery": [
