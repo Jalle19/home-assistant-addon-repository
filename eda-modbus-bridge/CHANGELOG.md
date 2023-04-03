@@ -1,6 +1,6 @@
 # Change log
 
-## future release
+## 1.3.1
 - Fix "s6-overlay-suexec: fatal: can only run as pid 1" error on addon start
 
 ## 1.3.0
