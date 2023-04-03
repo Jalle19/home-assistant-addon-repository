@@ -7,7 +7,7 @@ WORKDIR /app
 
 RUN apk add --no-cache git nodejs npm python3 musl-dev make g++ linux-headers
 
-RUN git clone --depth=1 --branch 2.2.0 https://github.com/Jalle19/eda-modbus-bridge.git eda-modbus-bridge
+RUN git clone --depth=1 --branch 2.3.0 https://github.com/Jalle19/eda-modbus-bridge.git eda-modbus-bridge
 RUN npm i --prefix eda-modbus-bridge --production
 
 COPY config.sh /app/config.sh
