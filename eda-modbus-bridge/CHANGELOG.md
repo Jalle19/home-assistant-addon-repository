@@ -1,5 +1,11 @@
 # Change log
 
+## 1.3.2
+- Update to [eda-modbus-bridge 2.3.1](https://github.com/Jalle19/eda-modbus-bridge/releases/tag/2.3.1)
+  * Log stack traces for unknown errors (should help debug https://github.com/Jalle19/home-assistant-addon-repository/issues/17)
+  * Use `%` instead of `%H` for MQTT humidity sensor entities (https://github.com/Jalle19/eda-modbus-bridge/issues/64)
+  * Fix automatic reconnect to MQTT broker when initial connection attempt fails (https://github.com/Jalle19/eda-modbus-bridge/issues/61)
+
 ## 1.3.1
 - Fix "s6-overlay-suexec: fatal: can only run as pid 1" error on addon start
 
