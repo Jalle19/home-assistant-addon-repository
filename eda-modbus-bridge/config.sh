@@ -60,6 +60,11 @@ function get-config {
     CMD_OPTIONS+=" --mqttPublishInterval $(bashio::config 'mqtt.publish_interval')"
   fi
 
+  debugEnabled=$(bashio::config 'logging.debug')
+  if [[ "$debugEnabled" = "true" ]]; then
+    CMD_OPTIONS+=" -v"
+  fi
+
   return 0
 }
 
