@@ -1,5 +1,16 @@
 # Change log
 
+## 1.4.0
+- Update to [eda-modbus-bridge 2.4.0](https://github.com/Jalle19/eda-modbus-bridge/releases/tag/2.4.0)
+  * Drastically improve application logging
+  * Add missing error handling to the `/summary` route, change HTTP error responses to return JSON
+  * Add `-v` option which enables debug logging
+  * Start using ESLint, add `no-console` rule to enforce use of logger instances
+  * Include the unit's Modbus address in the device information
+  * Add a section about older software versions to the README
+- Add a new `logging.debug` option for controlling debug logging (https://github.com/Jalle19/home-assistant-addon-repository/issues/27)
+- Fix deprecation warning when installing dependencies (https://github.com/Jalle19/home-assistant-addon-repository/issues/25)
+
 ## 1.3.2
 - Update to [eda-modbus-bridge 2.3.1](https://github.com/Jalle19/eda-modbus-bridge/releases/tag/2.3.1)
   * Log stack traces for unknown errors (should help debug https://github.com/Jalle19/home-assistant-addon-repository/issues/17)
