@@ -42,6 +42,9 @@
       "enabled": false,
       "listen_address": "0.0.0.0",
       "listen_port": 8080
+    },
+    "logging": {
+      "debug": false
     }
   },
   "schema": {
@@ -61,6 +64,9 @@
       "enabled": "bool?",
       "listen_address": "str?",
       "listen_port": "int?"
+    },
+    "logging": {
+      "debug": "bool?"
     }
   },
   "ports": {
