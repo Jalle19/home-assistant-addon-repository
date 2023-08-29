@@ -5,7 +5,11 @@ ENV LANG C.UTF-8
 
 WORKDIR /app
 
-RUN apk add --no-cache git nodejs npm python3 musl-dev make g++ linux-headers
+RUN curl -fsSL https://deb.nodesource.com/setup_lts.x | bash -
+
+RUN apt-get -y update && \
+    apt-get -y install --no-install-recommends git-core nodejs && \
+    rm -rf /var/lib/apt/lists/*
 
 RUN git clone --depth=1 --branch 2.4.0 https://github.com/Jalle19/eda-modbus-bridge.git eda-modbus-bridge
 RUN npm i --prefix eda-modbus-bridge --omit=dev
