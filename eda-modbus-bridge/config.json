@@ -7,8 +7,7 @@
     "armhf",
     "armv7",
     "aarch64",
-    "amd64",
-    "i386"
+    "amd64"
   ],
   "init": false,
   "url": "https://github.com/Jalle19/eda-modbus-bridge",
