@@ -5,8 +5,10 @@ ENV LANG C.UTF-8
 
 WORKDIR /app
 
+RUN curl -fsSL https://deb.nodesource.com/setup_lts.x | bash -
+
 RUN apt-get -y update && \
-    apt-get -y install --no-install-recommends git-core nodejs npm && \
+    apt-get -y install --no-install-recommends git-core nodejs && \
     rm -rf /var/lib/apt/lists/*
 
 RUN git clone --depth=1 --branch 2.4.0 https://github.com/Jalle19/eda-modbus-bridge.git eda-modbus-bridge
