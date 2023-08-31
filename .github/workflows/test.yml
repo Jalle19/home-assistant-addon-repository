@@ -9,13 +9,16 @@ jobs:
   build:
     name: Build eda-modbus-bridge
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        architecture: [armhf, armv7, amd64, aarch64, i386]
     steps:
       - name: Checkout the repository
         uses: actions/checkout@v2
-      - name: Build eda-modbus-bridge
+      - name: Build eda-modbus-bridge (${{ matrix.architecture }})
         uses: home-assistant/builder@master
         with:
           args: |
             --test \
-            --all \
+            --${{ matrix.architecture }} \
             --target eda-modbus-bridge
