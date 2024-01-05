@@ -9,7 +9,9 @@ The most important settings are commented below:
 
 ```yaml
 modbus:
-  # The RS-485 device to use. It's recommended to use a non-changing name like /dev/serial/by-id/usb-FTDI_FT232R_USB_UART_AG0KBDA8-if00-port0
+  # The RS-485 device to use. It's recommended to use a non-changing name like /dev/serial/by-id/usb-FTDI_FT232R_USB_UART_AG0KBDA8-if00-port0.
+  # For units with Modbus TCP, specify the address like this: tcp://192.168.1.100:502, where 192.168.1.100 is your 
+  # ventilation unit's IP address.
   device: /dev/ttyUSB0
   slave: 1
 mqtt:
