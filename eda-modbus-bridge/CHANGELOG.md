@@ -1,12 +1,15 @@
 # Change log
 
 ## 1.6.0
-- Update to [eda-modbus-bridge 2.6.0](https://github.com/Jalle19/eda-modbus-bridge/releases/tag/2.6.0)
+- Update to [eda-modbus-bridge 2.7.0](https://github.com/Jalle19/eda-modbus-bridge/releases/tag/2.7.0)
   * Add Modbus TCP support (https://github.com/Jalle19/eda-modbus-bridge/issues/86)
   * Expose "room temperature average" if available (https://github.com/Jalle19/eda-modbus-bridge/issues/88)
   * Expose optional analog inputs (CO2, RH, and room temperature sensors) if available (https://github.com/Jalle19/eda-modbus-bridge/issues/88)
   * Fix device type (Pro/Family) parsing (https://github.com/Jalle19/eda-modbus-bridge/issues/89)
   * Parse pro unit size correctly
+  * Change Home Assistant auto-discovery log level to `debug` (https://github.com/Jalle19/eda-modbus-bridge/issues/93)
+  * Add settings switches for cooling/heating allowed (https://github.com/Jalle19/eda-modbus-bridge/issues/98)
+  * Publish all MQTT values immediately during startup, don't wait until the first scheduled update
 
 ## 1.5.0
 - Update to [eda-modbus-bridge 2.5.0](https://github.com/Jalle19/eda-modbus-bridge/releases/tag/2.5.0)
