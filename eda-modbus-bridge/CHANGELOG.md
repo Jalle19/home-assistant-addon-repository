@@ -1,5 +1,9 @@
 # Change log
 
+## 1.6.1
+- Update to [eda-modbus-bridge 2.7.1](https://github.com/Jalle19/eda-modbus-bridge/releases/tag/2.7.1)
+  * Fix reading from unit type from wrong register (https://github.com/Jalle19/eda-modbus-bridge/issues/100)
+
 ## 1.6.0
 - Update to [eda-modbus-bridge 2.7.0](https://github.com/Jalle19/eda-modbus-bridge/releases/tag/2.7.0)
   * Add Modbus TCP support (https://github.com/Jalle19/eda-modbus-bridge/issues/86)
