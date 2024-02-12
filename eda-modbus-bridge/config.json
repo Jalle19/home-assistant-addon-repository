@@ -1,6 +1,6 @@
 {
   "name": "Enervent EDA Modbus Bridge",
-  "version": "1.6.1",
+  "version": "1.6.2",
   "slug": "eda-modbus-bridge",
   "description": "A Modbus MQTT bridge for Enervent ventilation units with EDA automation",
   "arch": [
