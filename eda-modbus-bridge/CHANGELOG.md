@@ -1,5 +1,12 @@
 # Change log
 
+## 1.6.3
+- Update to [eda-modbus-bridge 2.9.0](https://github.com/Jalle19/eda-modbus-bridge/releases/tag/2.9.0)
+  * Remove `alarmHistory` from HTTP, expose the same alarm summary as we do for MQTT
+  * Add support for acknowledging alarms (https://github.com/Jalle19/eda-modbus-bridge/pull/115)
+  * Expose a separate `returnWaterTemperature` sensor for applicable units (https://github.com/Jalle19/eda-modbus-bridge/issues/122)
+  * Various documentation updates
+
 ## 1.6.2
 - Update to [eda-modbus-bridge 2.8.0](https://github.com/Jalle19/eda-modbus-bridge/releases/tag/2.8.0)
   * Upgrade `mqtt` to get rid of `async-mqtt` (https://github.com/Jalle19/eda-modbus-bridge/issues/95)
