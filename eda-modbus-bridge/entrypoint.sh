@@ -4,4 +4,4 @@ source config.sh
 
 get-config
 
-node --unhandled-rejections=warn /app/eda-modbus-bridge/eda-modbus-bridge.mjs ${CMD_OPTIONS}
+node --unhandled-rejections=warn /app/eda-modbus-bridge/dist/eda-modbus-bridge.js ${CMD_OPTIONS}
