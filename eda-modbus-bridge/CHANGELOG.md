@@ -1,5 +1,19 @@
 # Change log
 
+## 2.0.0
+- Update to [eda-modbus-bridge 3.0.0](https://github.com/Jalle19/eda-modbus-bridge/releases/tag/3.0.0)
+  * Remove deprecated `flags` field in summary responses
+  * Port the application to TypeScript
+  * Bump minimum Node.js version to 18.x
+  * Document that crashing due to read errors is expected behavior in some cases
+  * Adjust `yargs` so it doesn't accept `-option` instead of `--option` (used to be parsed as `-o -p -t -i -o -n`)
+  * Make supply/exhaust fan speed during overpressure configurable. This can be used to dynamically control the amount of
+    over-pressurization without having to wire signal wires to the various inputs on the ventilation unit (for cooker
+    hood, central vacuum etc.)
+  * Make Modbus timeout configurable
+  * Expose `exhaustAirTemperatureBeforeHeatRecovery` and `returnWaterTemperature` sensors to Home Assistant
+  * Properly handle exceptions during MQTT operations
+
 ## 1.6.3
 - Update to [eda-modbus-bridge 2.9.0](https://github.com/Jalle19/eda-modbus-bridge/releases/tag/2.9.0)
   * Remove `alarmHistory` from HTTP, expose the same alarm summary as we do for MQTT
