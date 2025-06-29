@@ -1,5 +1,10 @@
 # Change log
 
+## 2.0.1
+- Update to [eda-modbus-bridge 3.0.1](https://github.com/Jalle19/eda-modbus-bridge/releases/tag/3.0.1)
+  * Don't catch `PortNotOpenError` errors, fixes issue introduced in 3.0.0 where the program was left in a state it
+    could never recover from (https://github.com/Jalle19/eda-modbus-bridge/issues/148)
+
 ## 2.0.0
 - Update to [eda-modbus-bridge 3.0.0](https://github.com/Jalle19/eda-modbus-bridge/releases/tag/3.0.0)
   * Remove deprecated `flags` field in summary responses
