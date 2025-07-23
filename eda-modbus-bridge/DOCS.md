@@ -32,6 +32,9 @@ http:
   listen_port: 8080
 ```
 
+Make sure you enable the addon watchdog, otherwise you won't be able to automatically recover from transient Modbus 
+errors!
+
 ## Usage
 
 Nominal add-on startup output looks like this:
