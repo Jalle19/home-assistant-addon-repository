@@ -4,7 +4,6 @@
   "slug": "eda-modbus-bridge",
   "description": "A Modbus MQTT bridge for Enervent ventilation units with EDA automation",
   "arch": [
-    "armhf",
     "armv7",
     "aarch64",
     "amd64"
